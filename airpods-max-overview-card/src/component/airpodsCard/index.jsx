@@ -38,29 +38,29 @@ const AirpodsMax = styled(motion.div)`
 `;
 
 export function AirpodsCard(props) {
-//   const [active, setActive] = useState("overview");
+  const [active, setActive] = useState("overview");
 
-//   const contextValue = { active, setActive };
+  const contextValue = { active, setActive };
 
-//   let animate = {};
-//   if (active === "buy") animate = { opacity: 1 };
-//   else if (active === "overview") animate = { opacity: 0 };
+  let animate = {};
+  if (active === "buy") animate = { opacity: 1 };
+  else if (active === "overview") animate = { opacity: 0 };
 
   return (
-    // <CardContext.Provider value={contextValue}>
+    <CardContext.Provider value={contextValue}>
       <CardContainer>
         <AirpodsMax
-        //   initial={{ opacity: 0 }}
-        //   animate={animate}
-        //   transition={{ type: "tween", duration: 1 }}
+          initial={{ opacity: 0 }}
+          animate={animate}
+          transition={{ type: "tween", duration: 1 }}
         >
-          <img src={AirpodsMaxImg} />
+          <img src={AirpodsMaxImg} alt=''/>
         </AirpodsMax>
         <CardWrapper>
           <Overview />
           <BuyProduct />
         </CardWrapper>
       </CardContainer>
-    {/* </CardContext.Provider> */}
+    </CardContext.Provider>
   );
 }
